@@ -11,6 +11,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        dmsans: ['DM Sans', 'Arial', 'sans-serif', 'system-ui'],
+        sourceserif: ['Source Serif', 'Arial', 'sans-serif', 'system-ui']
+      },
     },
   },
   plugins: [],
