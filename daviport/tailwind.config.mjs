@@ -12,8 +12,8 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        dmsans: ['DM Sans', 'Arial', 'sans-serif', 'system-ui'],
-        sourceserif: ['Source Serif', 'Arial', 'sans-serif', 'system-ui']
+        aboreto: ['Aboreto', 'Arial', 'sans-serif', 'system-ui'],
+        notoserif: ['Noto Serif', 'Arial', 'sans-serif', 'system-ui']
       },
     },
   },
