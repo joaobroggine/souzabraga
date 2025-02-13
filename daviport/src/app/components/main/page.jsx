@@ -1,46 +1,47 @@
+"use client"
+
 import Image from 'next/image'
-import { motion } from 'framer-motion'
 import React from 'react'
+const motion = require('./motionComponent');
 
 const Main = () => {
   return (
-    <>
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }} 
       animate={{ opacity: 1, y: 0 }} 
-      transition={{ duration: 0.8, ease: "easeOut" }} 
-      className='h-screen bg-[#F4F4F4]'
+      transition={{ duration: 1, ease: 'easeOut' }}
+      className='h-screen bg-[#F4F4F4] flex items-center justify-center'
     >
-      <main className='h-screen flex flex-col justify-center items-center pb-7'>
-        
+      <main className='w-full max-w-md p-6 bg-white shadow-[rgba(0,0,0,0.2)_-18px_20px_0px_-5px] flex flex-col items-center hover:scale-105 duration-500'>
         {/* Imagem com animação */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }} 
           animate={{ opacity: 1, scale: 1 }} 
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
         >
           <Image 
-            className='border-b border-[#3A7D44] pb-3' 
-            src="/images/souzabraga.jfif" 
+            className='shadow-lg' 
+            src='/images/souzabraga.jfif' 
             alt='Davi Souza Braga' 
-            width={370} 
-            height={370}
+            width={300} 
+            height={150}
           />
         </motion.div>
 
+        {/* Texto */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }} 
-          className='pr-5 pt-4 text-center'
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.5 }} 
+          className='border-t border-[#3A7D44] pt-3 text-center mt-4'
         >
-          <h1 className='font-aboreto text-2xl text-[#3A7D44]'>Davi Souza Braga, 18 anos</h1>
-          <h2 className='font-aboreto text-xl text-[#3A7D44]'>Nutricionista</h2>
-          <ul className='font-notoserif text-xs text-[#3A7D44] pt-4'>
-            <li>UniFECAF</li>
-            <li>Estudante de Nutrição</li>
-            <li>Ex-Professor</li>
-            <li>Jovem Prodígio</li>
+          <h1 className='text-2xl font-aboreto text-[#3A7D44]'>Davi Souza Braga, 18 anos</h1>
+          <h2 className='text-lg font-aboreto text-[#3A7D44]'>Nutricionista</h2>
+          <ul className='text-sm text-[#3A7D44] mt-3 space-y-1'>
+            <li>🎓 UniFECAF</li>
+            <li>📚 Estudante de Nutrição</li>
+            <li>🧑‍🏫 Ex-Professor</li>
+            <li>🌟 Jovem Prodígio</li>
           </ul>
         </motion.div>
 
@@ -48,25 +49,31 @@ const Main = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
-          className='flex justify-center mt-4 space-x-5 w-full'
+          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.7 }}
+          className='flex justify-center mt-6 space-x-4'
         >
-          <button className='border border-[#087bb9] rounded-md hover:shadow-lg hover:scale-110 duration-500
-            p-2 h-10 w-40 font-thin text-xl 
-            flex justify-center items-center'>
-            <Image className='mr-3' src="/images/linkedin.png" alt='Linkedin' width={25} height={30}/> 
+          <motion.a 
+            href='#' 
+            whileHover={{  boxShadow: '0px 8px 15px rgba(0, 123, 185, 0.3)' }}
+            className='flex items-center px-4 py-2 border border-[#087bb9] text-[#087bb9] font-medium shadow-sm transition-all duration-300'
+          >
+            <Image src='/images/linkedin.png' alt='LinkedIn' width={20} height={20} className='mr-2'/> 
             LinkedIn
-          </button>
-          <button className='border border-[#ec4b3a] rounded-md hover:shadow-lg hover:scale-110 duration-500
-            p-2 h-10 w-40 font-thin text-xl
-            flex justify-center items-center'>
-            <Image className='mr-5' src="/images/gmail.png" alt='Gmail' width={28} height={30}/> 
+          </motion.a>
+
+          <motion.a 
+            href='#' 
+            whileHover={{  boxShadow: '0px 8px 15px rgba(236, 75, 58, 0.3)' }}
+            className='flex items-center px-4 py-2 border border-[#ec4b3a] text-[#ec4b3a] font-medium shadow-sm transition-all duration-300'
+          >
+            <Image src='/images/gmail.png' alt='Gmail' width={22} height={22} className='mr-2'/> 
             Gmail
-          </button>
+          </motion.a>
         </motion.div>
       </main>
+      <Image className='relative translate-x-96'
+      src="/images/forward.png" alt='Indicador Direito' width={40} height={40} />
     </motion.div>
-    </>
   )
 }
 
