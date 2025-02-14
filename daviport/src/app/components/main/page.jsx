@@ -1,6 +1,7 @@
 "use client"
 
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 const motion = require('./motionComponent');
 
@@ -13,7 +14,6 @@ const Main = () => {
       className='h-screen bg-[#F4F4F4] flex items-center justify-center'
     >
       <main className='w-full max-w-md p-6 bg-white shadow-[rgba(0,0,0,0.2)_-18px_20px_0px_-5px] flex flex-col items-center hover:scale-105 duration-500'>
-        {/* Imagem com animação */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }} 
           animate={{ opacity: 1, scale: 1 }} 
@@ -27,8 +27,6 @@ const Main = () => {
             height={150}
           />
         </motion.div>
-
-        {/* Texto */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
@@ -44,8 +42,6 @@ const Main = () => {
             <li>🌟 Jovem Prodígio</li>
           </ul>
         </motion.div>
-
-        {/* Botões com animação */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }} 
           animate={{ opacity: 1, y: 0 }} 
@@ -53,7 +49,8 @@ const Main = () => {
           className='flex justify-center mt-6 space-x-4'
         >
           <motion.a 
-            href='#' 
+             href='https://www.linkedin.com/in/davi-souza-braga-395674302/'
+             target='_blank' 
             whileHover={{  boxShadow: '0px 8px 15px rgba(0, 123, 185, 0.3)' }}
             className='flex items-center px-4 py-2 border border-[#087bb9] text-[#087bb9] font-medium shadow-sm transition-all duration-300'
           >
@@ -62,7 +59,8 @@ const Main = () => {
           </motion.a>
 
           <motion.a 
-            href='#' 
+            href='https://mail.google.com/mail/u/1/#inbox?compose=DmwnWrRmTpLFjQnxDrNBcXGFbLjLZqBFBfZKxLzcCvLmwJFblRRvgZMLkXdqbqRdLtfFgmhSFZBG'
+            target='_blank' 
             whileHover={{  boxShadow: '0px 8px 15px rgba(236, 75, 58, 0.3)' }}
             className='flex items-center px-4 py-2 border border-[#ec4b3a] text-[#ec4b3a] font-medium shadow-sm transition-all duration-300'
           >
@@ -71,8 +69,10 @@ const Main = () => {
           </motion.a>
         </motion.div>
       </main>
-      <Image className='relative translate-x-96'
-      src="/images/forward.png" alt='Indicador Direito' width={40} height={40} />
+      <Link href="/about">
+        <Image className='relative translate-x-96 hover:scale-105 duration-300'
+        src="/images/forward.png" alt='Indicador Direito' width={40} height={40} />
+      </Link>
     </motion.div>
   )
 }
