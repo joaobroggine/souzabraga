@@ -63,7 +63,7 @@ const Main = () => {
         <Image src="/images/nutrition.png" alt='Nutrição' width={280} height={100} />
       </motion.div>
 
-      <Link className='relative translate-x-10' href="/">
+      <Link className='relative translate-x-10' href="/certificacoes">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
