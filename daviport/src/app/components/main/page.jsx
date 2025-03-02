@@ -23,7 +23,7 @@ const Main = () => {
         >
           <Image
             className='shadow-lg xl:min-w-72'
-            src='/images/souzabraga.jfif'
+            src='/images/davibraga.jpg'
             alt='Davi Souza Braga'
             width={300}
             height={150}
